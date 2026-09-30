@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Portfolio de GANSE Kpèhoué Gille-Christ, étudiant en sécurité informatique.">
+  <title>Gille-Christ | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <style>
+    :root { --ink:#202a2e; --muted:#66747a; --accent:#34b7a7; --deep:#10252b; --line:#dce7e5; --soft:#edf5f3; }
+    html { scroll-behavior:smooth; }
+    body { color:var(--ink); font-family:Roboto, sans-serif; background:#dce9e6; isolation:isolate; }
+    body::before { content:""; position:fixed; inset:0; z-index:-2; background:url("WhatsApp Image 2026-08-27 at 4.52.14 PM (1).jpeg") center/cover no-repeat; transform:scaleX(-1); filter:grayscale(.08) saturate(1.05) contrast(1.08); opacity:.68; }
+    body::after { content:""; position:fixed; inset:0; z-index:-1; background:rgba(9,31,35,.16); pointer-events:none; }
+    h1,h2,h3,h4 { font-family:Raleway, sans-serif; }
+    a { color:inherit; text-decoration:none; }
+    .container { max-width:1140px; }
+    .site-header { height:72px; display:flex; align-items:center; border-bottom:1px solid rgba(220,231,229,.7); background:rgba(255,255,255,.82); backdrop-filter:blur(12px); position:sticky; top:0; z-index:20; }
+    .brand { color:#1f1f1f; font-family:Raleway,sans-serif; font-size:25px; font-weight:700; letter-spacing:.5px; }
+    .brand span { color:var(--accent); }
+    .site-nav { display:flex; justify-content:flex-end; gap:28px; }
+    .site-nav a { color:#555; font-size:13px; font-weight:500; padding:26px 0 21px; border-bottom:2px solid transparent; }
+    .site-nav a:hover, .site-nav a.active { color:var(--accent); border-color:var(--accent); }
+    .menu-button { display:none; border:0; background:transparent; color:#333; font-size:25px; }
+    .hero { min-height:calc(100vh - 72px); display:flex; align-items:center; text-align:center; background:rgba(10,29,34,.48); }
+    .hero h1 { color:#fff; font-size:clamp(42px,6vw,68px); font-weight:700; margin:0 0 15px; text-shadow:0 3px 18px rgba(0,0,0,.3); }
+    .hero p { color:#edf8f6; font-size:24px; font-weight:300; margin:0 0 27px; }
+    .hero p span { color:var(--accent); font-weight:400; }
+    .socials { display:flex; justify-content:center; gap:12px; }
+    .socials a { color:#e7f5f2; font-size:18px; transition:.2s; }
+    .socials a:hover { color:var(--accent); transform:translateY(-2px); }
+    .section { padding:82px 0; background:rgba(255,255,255,.72); }
+    .section.bg-light, .skills { background:rgba(237,245,243,.78) !important; }
+    .section-title { text-align:center; padding-bottom:36px; }
+    .section-title h2 { text-transform:uppercase; font-size:31px; font-weight:700; margin:0 0 14px; }
+    .section-title h2:after { content:""; display:block; width:50px; height:3px; background:var(--accent); margin:14px auto 0; }
+    .section-title p { max-width:700px; margin:auto; color:var(--muted); }
+    .about-copy h3 { font-size:25px; font-weight:600; line-height:1.35; }
+    .about-copy p { color:var(--muted); line-height:1.75; }
+    .about-photo { width:100%; height:410px; object-fit:cover; object-position:center 30%; }
+    .details { list-style:none; padding:0; color:var(--muted); line-height:2; }
+    .details i { color:var(--accent); margin-right:8px; }
+    .service { padding:28px 25px; border:1px solid var(--line); height:100%; transition:.25s; }
+    .service:hover { border-color:var(--accent); transform:translateY(-4px); box-shadow:0 10px 24px rgba(0,0,0,.06); }
+    .service i { display:block; color:var(--accent); font-size:31px; margin-bottom:18px; }
+    .service h3 { font-size:18px; font-weight:600; }
+    .service p { color:var(--muted); font-size:14px; line-height:1.7; margin:0; }
+    .skills { background:var(--soft); }
+    .skill-group h3 { font-size:20px; margin-bottom:18px; }
+    .skill-group p { color:var(--muted); font-size:15px; line-height:1.8; }
+    .tag { display:inline-block; margin:5px 4px 0 0; padding:7px 11px; background:#fff; border:1px solid var(--line); color:#656565; font-size:12px; }
+    .education-line { border-left:2px solid var(--accent); padding-left:26px; }
+    .education-item { position:relative; margin-bottom:30px; }
+    .education-item:before { content:""; position:absolute; width:11px; height:11px; background:var(--accent); border-radius:50%; left:-33px; top:5px; }
+    .education-item .date { color:var(--accent); font-size:13px; font-weight:600; }
+    .education-item h3 { font-size:20px; font-weight:600; margin:7px 0; }
+    .education-item p { color:var(--muted); line-height:1.7; margin:0; }
+    .portfolio-filters { display:flex; justify-content:center; gap:25px; list-style:none; padding:0; margin:0 0 30px; }
+    .portfolio-filters li { color:#777; cursor:pointer; font-size:13px; text-transform:uppercase; }
+    .portfolio-filters li.active, .portfolio-filters li:hover { color:var(--accent); }
+    .project { border:1px solid var(--line); background:#fff; height:100%; overflow:hidden; }
+    .project-image { height:210px; background:linear-gradient(135deg,#eaf8f5,#f8f8f8); display:flex; align-items:center; justify-content:center; color:var(--accent); font-size:50px; }
+    .project-image img { width:100%; height:100%; object-fit:cover; }
+    .project-body { padding:22px; }
+    .project-body h3 { font-size:19px; margin:0 0 8px; }
+    .project-body p { color:var(--muted); font-size:14px; line-height:1.7; margin:0; }
+    .quote { background:rgba(16,37,43,.91); color:#fff; text-align:center; padding:42px 25px; }
+    .quote i { color:var(--accent); font-size:27px; }
+    .quote p { color:#dcebea; font-style:italic; line-height:1.8; max-width:720px; margin:15px auto; }
+    .quote h3 { font-size:17px; margin:0; }
+    .quote small { color:var(--muted); }
+    .contact-item { display:flex; gap:15px; margin-bottom:27px; }
+    .contact-item i { color:var(--accent); font-size:23px; }
+    .contact-item h3 { font-size:16px; margin:0 0 5px; }
+    .contact-item p { color:var(--muted); margin:0; font-size:14px; }
+    .experience { border-left:2px solid var(--accent); padding-left:28px; }
+    .experience-item { position:relative; margin-bottom:32px; }
+    .experience-item:before { content:""; width:12px; height:12px; border-radius:50%; background:var(--accent); position:absolute; left:-35px; top:6px; }
+    .experience-item .date { color:var(--accent); font-size:13px; font-weight:600; }
+    .experience-item h3 { font-size:21px; margin:7px 0; }
+    .experience-item p { color:var(--muted); line-height:1.75; margin:0 0 10px; }
+    .experience-item ul { color:var(--muted); line-height:1.8; padding-left:18px; }
+    .document-actions { display:flex; gap:10px; flex-wrap:wrap; margin-top:17px; }
+    .document-actions .btn { font-size:12px; padding:8px 13px; }
+    .form-control { border-radius:0; border-color:#ddd; padding:12px 14px; }
+    .form-control:focus { border-color:var(--accent); box-shadow:0 0 0 .2rem rgba(52,183,167,.12); }
+    .btn-main { border:0; border-radius:0; background:var(--accent); color:#fff; padding:12px 26px; }
+    .btn-main:hover { background:#269d90; color:#fff; }
+    footer { border-top:1px solid var(--line); color:var(--muted); font-size:13px; background:rgba(255,255,255,.8); }
+    @media (max-width:767px) { .site-header { height:64px; }.menu-button{display:block}.site-nav{display:none;position:absolute;top:64px;left:0;right:0;padding:10px 20px 15px;background:#fff;border-bottom:1px solid var(--line);flex-direction:column;gap:0}.site-nav.open{display:flex}.site-nav a{padding:10px 0;border:0}.hero{min-height:calc(100vh - 64px);padding:70px 0}.hero h1{font-size:43px}.hero p{font-size:20px}.section{padding:65px 0}.about-photo{height:340px;margin-bottom:20px}.portfolio-filters{gap:15px;flex-wrap:wrap} }
+  </style>
+</head>
+<body>
+  <header class="site-header"><div class="container d-flex justify-content-between align-items-center"><a class="brand" href="#hero">Gille<span>.</span>Christ</a><button class="menu-button" id="menuButton" aria-label="Ouvrir le menu"><i class="bi bi-list"></i></button><nav class="site-nav" id="siteNav"><a class="active" href="#hero">Accueil</a><a href="#about">À propos</a><a href="#services">Services</a><a href="#portfolio">Portfolio</a><a href="#experience">Expérience</a><a href="#education">Formation</a><a href="#documents">Documents</a><a href="#contact">Contact</a></nav></div></header>
+  <main>
+    <section id="hero" class="hero"><div class="container"><h1>GANSE Kpèhoué Gille-Christ</h1><p>Je suis <span id="role">étudiant en sécurité informatique</span></p><div class="socials"><a href="https://github.com/elchristo229" aria-label="GitHub"><i class="bi bi-github"></i></a><a href="mailto:kpehoue@gmail.com" aria-label="Email"><i class="bi bi-envelope"></i></a><a href="#contact" aria-label="Contact"><i class="bi bi-chat-dots"></i></a></div></div></section>
+    <section id="about" class="section"><div class="container"><div class="section-title"><h2>À propos</h2><p>Étudiant en sécurité informatique, je construis progressivement mon projet professionnel autour des systèmes, des réseaux et de l'analyse des incidents.</p></div><div class="row gy-4 align-items-center"><div class="col-lg-5"><img class="about-photo" src="WhatsApp Image 2026-08-27 at 4.52.14 PM (1).jpeg" alt="Portrait de Gille-Christ"></div><div class="col-lg-7 about-copy ps-lg-5"><h3>Étudiant en sécurité informatique avec des bases en développement web et en design graphique</h3><p>Je me forme pour devenir ingénieur sécurité ou analyste SOC. Mon objectif est de développer une compréhension solide des réseaux, des systèmes et de la défense informatique.</p><p>En parallèle de ma formation, j'ai acquis des compétences en développement web et en design graphique. Ce sont des domaines complémentaires à mon parcours, mais que je présente séparément de mon orientation principale en cybersécurité.</p><ul class="details"><li><i class="bi bi-check-circle-fill"></i>Licence en Sécurité Informatique, L2, IFRI - UAC</li><li><i class="bi bi-check-circle-fill"></i>Certification SecNumacadémie - ANSSI</li><li><i class="bi bi-check-circle-fill"></i>Basé à Abomey-Calavi, Bénin</li></ul></div></div></div></section>
+    <section id="services" class="section bg-light"><div class="container"><div class="section-title"><h2>Services</h2><p>Des compétences distinctes, mobilisables selon le besoin du projet.</p></div><div class="row gy-4"><div class="col-lg-4 col-md-6"><div class="service"><i class="bi bi-shield-lock"></i><h3>Initiation à la sécurité</h3><p>Veille, sensibilisation et mise en pratique des fondamentaux de la sécurité des systèmes d'information.</p></div></div><div class="col-lg-4 col-md-6"><div class="service"><i class="bi bi-diagram-3"></i><h3>Réseaux &amp; systèmes</h3><p>Travaux académiques autour de TCP/IP, Linux, DNS, VPN et observation des flux réseau.</p></div></div><div class="col-lg-4 col-md-6"><div class="service"><i class="bi bi-code-slash"></i><h3>Développement web</h3><p>Création de pages et de petites applications avec HTML, CSS, JavaScript, React et Next.js.</p></div></div><div class="col-lg-4 col-md-6"><div class="service"><i class="bi bi-palette"></i><h3>Design graphique</h3><p>Création de visuels, choix typographiques et composition graphique pour des supports numériques.</p></div></div><div class="col-lg-4 col-md-6"><div class="service"><i class="bi bi-file-earmark-text"></i><h3>Documentation technique</h3><p>Organisation d'informations techniques et rédaction de contenus accessibles pour un projet.</p></div></div><div class="col-lg-4 col-md-6"><div class="service"><i class="bi bi-mortarboard"></i><h3>Apprentissage continu</h3><p>Une démarche d'étude régulière pour progresser vers un futur rôle d'ingénieur sécurité ou d'analyste SOC.</p></div></div></div></div></section>
+    <section id="skills" class="section skills"><div class="container"><div class="section-title"><h2>Compétences</h2><p>Un état des lieux honnête de mes acquis actuels et de mon axe de progression.</p></div><div class="row gy-4"><div class="col-md-4 skill-group"><h3>Cybersécurité</h3><p>Fondamentaux SSI, cryptographie, hashing, contrôle d'accès, journalisation et notions de gestion des risques.</p><span class="tag">GnuPG</span><span class="tag">SHA-256</span><span class="tag">ANSSI</span></div><div class="col-md-4 skill-group"><h3>Réseaux &amp; Linux</h3><p>Notions de TCP/IP et du modèle OSI, DNS BIND9, VPN, Linux/Bash et observation du trafic avec Wireshark.</p><span class="tag">Linux</span><span class="tag">Wireshark</span><span class="tag">GNS3</span></div><div class="col-md-4 skill-group"><h3>Web &amp; graphisme</h3><p>Compétences indépendantes en interfaces web et en création graphique, développées par la pratique et les projets personnels.</p><span class="tag">HTML/CSS</span><span class="tag">JavaScript</span><span class="tag">Next.js</span></div></div></div></section>
+    <section id="education" class="section"><div class="container"><div class="section-title"><h2>Formation</h2><p>Le parcours qui construit mon projet professionnel.</p></div><div class="row"><div class="col-lg-7"><div class="education-line"><div class="education-item"><div class="date">2025 - Présent</div><h3>Licence en Sécurité Informatique - L2</h3><p>IFRI - Université d'Abomey-Calavi, Bénin. Sécurité des réseaux, cryptographie, systèmes d'exploitation, administration Linux et protocoles Internet.</p></div><div class="education-item"><div class="date">Certification</div><h3>SecNumacadémie - ANSSI</h3><p>Formation aux fondamentaux de la sécurité des systèmes d'information.</p></div></div></div><div class="col-lg-5"><h3>Objectif professionnel</h3><p class="text-secondary lh-lg">Continuer à consolider mes bases pour évoluer vers un poste d'ingénieur sécurité ou d'analyste SOC, au contact de situations concrètes et d'équipes expérimentées.</p></div></div></div></section>
+    <section id="experience" class="section bg-light"><div class="container"><div class="section-title"><h2>Expérience professionnelle</h2><p>Une première expérience en entreprise, réalisée dans le cadre de ma Licence 2 à l'IFRI.</p></div><div class="row"><div class="col-lg-8"><div class="experience"><div class="experience-item"><div class="date">6 - 18 juillet 2026 · 2 semaines</div><h3>Stagiaire informatique · Quantum Technology</h3><p>Cotonou, Bénin · Stage académique encadré par M. Mermoz HOUNGA.</p><ul><li>Conception de maquettes interactives avec Figma pour le projet SaaS DAO.</li><li>Développement autonome d'un gestionnaire de fiches techniques : upload PDF, recherche, tags et versioning.</li><li>Développement avec Django et Supabase, puis déploiement de l'application sur une machine virtuelle AWS.</li><li>Participation à l'architecture, au front-end, au back-end, à la base de données, aux API et à la documentation du SaaS DAO.</li></ul></div></div></div><div class="col-lg-4"><h3>Projet SaaS DAO</h3><p class="text-secondary lh-lg">Application web destinée à automatiser le traitement des dossiers d'appels d'offres. Cette expérience m'a permis de confronter mes acquis à un projet professionnel mené en équipe agile.</p><span class="tag">Figma</span><span class="tag">Django</span><span class="tag">Supabase</span><span class="tag">AWS</span></div></div></div></section>
+    <section id="portfolio" class="section bg-light"><div class="container"><div class="section-title"><h2>Portfolio</h2><p>Des réalisations et travaux présentés selon leur domaine, sans confondre mon parcours sécurité avec mes compétences web.</p></div><ul class="portfolio-filters"><li class="active" data-filter="all">Tous</li><li data-filter="web">Web</li><li data-filter="security">Sécurité</li><li data-filter="design">Design</li></ul><div class="row gy-4"><div class="col-lg-4 col-md-6 project-wrap" data-category="security"><article class="project"><div class="project-image"><i class="bi bi-shield-check"></i></div><div class="project-body"><h3>MediProof</h3><p>Hackathon Bitcoin Mastermind 2026 : preuve d'intégrité de dossiers médicaux par empreinte SHA-256, ancrage Bitcoin et QR code de vérification.</p></div></article></div><div class="col-lg-4 col-md-6 project-wrap" data-category="web"><article class="project"><div class="project-image"><i class="bi bi-window"></i></div><div class="project-body"><h3>Gestionnaire de fiches techniques</h3><p>Module développé pendant mon stage : upload PDF, recherche, tags, versioning et stockage Supabase avec Django.</p></div></article></div><div class="col-lg-4 col-md-6 project-wrap" data-category="web"><article class="project"><div class="project-image"><i class="bi bi-cloud-arrow-up"></i></div><div class="project-body"><h3>SaaS DAO</h3><p>Participation chez Quantum Technology à l'architecture, aux maquettes Figma, au développement et au déploiement AWS d'un outil pour les dossiers d'appels d'offres.</p></div></article></div><div class="col-lg-4 col-md-6 project-wrap" data-category="security"><article class="project"><div class="project-image"><i class="bi bi-diagram-3"></i></div><div class="project-body"><h3>Travaux pratiques réseaux</h3><p>Analyse ICMP/ARP avec Wireshark, VPN PPTP/L2TP avec GNS3 et administration DNS BIND9 dans le cadre de la formation IFRI.</p></div></article></div><div class="col-lg-4 col-md-6 project-wrap" data-category="design"><article class="project"><div class="project-image"><img src="WhatsApp Image 2026-08-27 at 4.52.14 PM.jpeg" alt="Portrait de Gille-Christ devant un tableau"></div><div class="project-body"><h3>Design graphique</h3><p>Pratique personnelle de la composition, de l'image et de la présentation visuelle, indépendante de mon orientation sécurité.</p></div></article></div></div></div></section>
+    <section class="section"><div class="container"><div class="section-title"><h2>Témoignage</h2><p>Une phrase qui résume ma manière d'avancer.</p></div><div class="quote"><i class="bi bi-quote"></i><p>« J'avance étape par étape : apprendre les fondamentaux, pratiquer, comprendre mes limites et construire une expertise solide. »</p><h3>GANSE Kpèhoué Gille-Christ</h3><small>Étudiant en sécurité informatique</small></div></div></section>
+    <section id="documents" class="section bg-light"><div class="container"><div class="section-title"><h2>Documents</h2><p>Consulte les PDF directement dans notre lecteur intégré, ou télécharge-les.</p></div><div class="row gy-3 justify-content-center"><div class="col-md-4"><div class="service"><i class="bi bi-file-earmark-person"></i><h3>CV - Sécurité informatique</h3><p>Parcours IFRI, certifications et travaux pratiques.</p><div class="document-actions"><a class="btn btn-main" href="pdf-viewer.html?file=CV_GANSE_Kpehoue_Gille-Christ.pdf&amp;title=CV%20-%20S%C3%A9curit%C3%A9%20informatique" target="_blank" rel="noopener">Voir le CV</a><a class="btn btn-outline-dark" href="CV_GANSE_Kpehoue_Gille-Christ.pdf" download>Télécharger</a></div></div></div><div class="col-md-4"><div class="service"><i class="bi bi-file-earmark-code"></i><h3>CV - Développement</h3><p>Expériences web, projets et compétences techniques.</p><div class="document-actions"><a class="btn btn-main" href="pdf-viewer.html?file=CV_Ganse_Kpehoue_Gille-Christ_Developpeur.pdf&amp;title=CV%20-%20D%C3%A9veloppement" target="_blank" rel="noopener">Voir le CV</a><a class="btn btn-outline-dark" href="CV_Ganse_Kpehoue_Gille-Christ_Developpeur.pdf" download>Télécharger</a></div></div></div><div class="col-md-4"><div class="service"><i class="bi bi-file-earmark-text"></i><h3>Rapport de stage</h3><p>Stage académique chez Quantum Technology, juillet 2026.</p><div class="document-actions"><a class="btn btn-main" href="pdf-viewer.html?file=Rapport_Stage_QuantumTechnology_GANSE.pdf&amp;title=Rapport%20de%20stage" target="_blank" rel="noopener">Voir le rapport</a><a class="btn btn-outline-dark" href="Rapport_Stage_QuantumTechnology_GANSE.pdf" download>Télécharger</a></div></div></div><div class="col-md-4"><div class="service"><i class="bi bi-file-earmark-slides"></i><h3>Présentation MediProof</h3><p>Projet Bitcoin Mastermind 2026.</p><div class="document-actions"><a class="btn btn-main" href="MediProof_Presentation.pptx" download>Télécharger le PPTX</a></div></div></div></div></div></section>
+    <section id="contact" class="section"><div class="container"><div class="section-title"><h2>Contact</h2><p>Pour échanger au sujet d'une opportunité, d'un stage ou d'un parcours en cybersécurité.</p></div><div class="row gy-4"><div class="col-lg-5"><div class="contact-item"><i class="bi bi-geo-alt"></i><div><h3>Localisation</h3><p>Abomey-Calavi, Bénin</p></div></div><div class="contact-item"><i class="bi bi-telephone"></i><div><h3>Téléphone</h3><p>+229 01 67 96 93 40</p></div></div><div class="contact-item"><i class="bi bi-envelope"></i><div><h3>Email</h3><p>kpehoue@gmail.com</p></div></div><div class="contact-item"><i class="bi bi-github"></i><div><h3>GitHub</h3><p>github.com/elchristo229</p></div></div></div><div class="col-lg-7"><form id="contactForm"><div class="row gy-3"><div class="col-md-6"><input class="form-control" name="name" placeholder="Votre nom" required></div><div class="col-md-6"><input class="form-control" type="email" name="email" placeholder="Votre email" required></div><div class="col-12"><input class="form-control" name="subject" placeholder="Sujet" required></div><div class="col-12"><textarea class="form-control" name="message" rows="5" placeholder="Votre message" required></textarea></div><div class="col-12 text-center"><button class="btn btn-main" type="submit">Envoyer le message <i class="bi bi-send ms-2"></i></button></div></div></form></div></div></div></section>
+  </main>
+  <footer class="py-4 text-center"><div class="container">© 2026 Gille-Christ. Tous droits réservés.</div></footer>
+  <script>
+    const menuButton = document.getElementById('menuButton');
+    const siteNav = document.getElementById('siteNav');
+    menuButton.addEventListener('click', () => siteNav.classList.toggle('open'));
+    document.querySelectorAll('.site-nav a').forEach(link => link.addEventListener('click', () => siteNav.classList.remove('open')));
+    const roles = ['étudiant en sécurité informatique', 'futur analyste SOC', 'en formation vers la cybersécurité'];
+    let roleIndex = 0;
+    setInterval(() => { roleIndex = (roleIndex + 1) % roles.length; document.getElementById('role').textContent = roles[roleIndex]; }, 2800);
+    document.querySelectorAll('.portfolio-filters li').forEach(filter => filter.addEventListener('click', () => {
+      document.querySelector('.portfolio-filters .active').classList.remove('active'); filter.classList.add('active');
+      document.querySelectorAll('.project-wrap').forEach(item => { item.hidden = filter.dataset.filter !== 'all' && !item.dataset.category.includes(filter.dataset.filter); });
+    }));
+    document.getElementById('contactForm').addEventListener('submit', event => { event.preventDefault(); const data = new FormData(event.currentTarget); window.location.href = `mailto:kpehoue@gmail.com?subject=${encodeURIComponent(data.get('subject'))}&body=${encodeURIComponent(`Bonjour,\n\n${data.get('message')}\n\n${data.get('name')} - ${data.get('email')}`)}`; });
+  </script>
+  <script>
+    document.querySelectorAll('a[href*="pdf-viewer.html"]').forEach(link => {
+      const href = link.getAttribute('href');
+      const fileMatch = href.match(/file=([^&]+)/);
+      if (!fileMatch) return;
+      const file = decodeURIComponent(fileMatch[1]);
+      const previews = {
+        'CV_GANSE_Kpehoue_Gille-Christ.pdf': ['cv-securite', 3, 'CV - Sécurité informatique'],
+        'CV_Ganse_Kpehoue_Gille-Christ_Developpeur.pdf': ['cv-developpement', 1, 'CV - Développement'],
+        'Rapport_Stage_QuantumTechnology_GANSE.pdf': ['rapport-stage', 3, 'Rapport de stage']
+      };
+      const preview = previews[file];
+      if (preview) link.href = `document-preview.html?prefix=${preview[0]}&pages=${preview[1]}&title=${encodeURIComponent(preview[2])}&pdf=${encodeURIComponent(file)}`;
+    });
+  </script>
+</body>
+</html>

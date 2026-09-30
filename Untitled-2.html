@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GANSE Kpèhoué Gille-Christ - About &amp; Skills</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-primary-fixed-variant": "#2c4964",
+                        "surface-container-lowest": "#ffffff",
+                        "paper-white": "#FFFFFF",
+                        "on-primary-fixed": "#001d33",
+                        "on-surface-variant": "#43474d",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed-dim": "#c8c6c6",
+                        "surface-container-high": "#e7e8e9",
+                        "secondary": "#715952",
+                        "on-primary-container": "#9bb8d8",
+                        "on-background": "#191c1d",
+                        "on-secondary-fixed": "#291712",
+                        "background": "#f8f9fa",
+                        "charcoal": "#3D3D3D",
+                        "inverse-primary": "#acc9ea",
+                        "surface-container": "#edeeef",
+                        "on-tertiary-container": "#b7b5b5",
+                        "on-tertiary-fixed": "#1b1c1c",
+                        "surface-bright": "#f8f9fa",
+                        "primary-fixed-dim": "#acc9ea",
+                        "on-tertiary": "#ffffff",
+                        "primary": "#13324c",
+                        "outline-variant": "#c3c7ce",
+                        "deep-navy": "#2C4964",
+                        "surface-container-low": "#f3f4f5",
+                        "on-secondary-fixed-variant": "#58423b",
+                        "on-secondary-container": "#785f58",
+                        "secondary-container": "#fddbd2",
+                        "primary-fixed": "#cee5ff",
+                        "error": "#ba1a1a",
+                        "on-surface": "#191c1d",
+                        "outline": "#73777e",
+                        "secondary-fixed-dim": "#dfc0b7",
+                        "error-container": "#ffdad6",
+                        "tertiary": "#313131",
+                        "on-primary": "#ffffff",
+                        "surface-variant": "#e1e3e4",
+                        "primary-container": "#2c4964",
+                        "muted-rose": "#B1948C",
+                        "on-tertiary-fixed-variant": "#474747",
+                        "inverse-on-surface": "#f0f1f2",
+                        "inverse-surface": "#2e3132",
+                        "tertiary-fixed": "#e4e2e1",
+                        "surface": "#f8f9fa",
+                        "secondary-fixed": "#fddbd2",
+                        "on-error-container": "#93000a",
+                        "on-error": "#ffffff",
+                        "surface-container-highest": "#e1e3e4",
+                        "surface-dim": "#d9dadb",
+                        "surface-tint": "#44617d",
+                        "tertiary-container": "#474747"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    spacing: {
+                        "gutter": "24px",
+                        "section-gap": "120px",
+                        "stack-md": "16px",
+                        "container-max": "1200px",
+                        "stack-sm": "8px",
+                        "margin-mobile": "16px",
+                        "stack-lg": "32px"
+                    },
+                    fontFamily: {
+                        "display-xl-mobile": ["Manrope"],
+                        "headline-lg": ["Manrope"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "display-xl": ["Manrope"],
+                        "label-sm": ["JetBrains Mono"],
+                        "headline-md": ["Manrope"],
+                        "code-inline": ["JetBrains Mono"]
+                    },
+                    fontSize: {
+                        "display-xl-mobile": ["40px", { lineHeight: "48px", letterSpacing: "-0.02em", fontWeight: "800" }],
+                        "headline-lg": ["32px", { lineHeight: "40px", fontWeight: "700" }],
+                        "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+                        "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+                        "display-xl": ["64px", { lineHeight: "72px", letterSpacing: "-0.02em", fontWeight: "800" }],
+                        "label-sm": ["13px", { lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "500" }],
+                        "headline-md": ["24px", { lineHeight: "32px", fontWeight: "600" }],
+                        "code-inline": ["14px", { lineHeight: "20px", fontWeight: "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #f8f9fa; /* surface */
+            color: #191c1d; /* on-surface */
+        }
+        .bullet-point {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .bullet-point::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.5rem;
+            width: 0.375rem;
+            height: 0.375rem;
+            background-color: #B1948C; /* muted-rose */
+            border-radius: 1px;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid #E9ECEF;
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md antialiased selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopAppBar -->
+<header class="bg-surface/80 dark:bg-inverse-surface/80 backdrop-blur-md font-headline-md text-headline-md docked full-width top-0 sticky border-b border-outline-variant dark:border-outline flat no shadows flex justify-between items-center w-full px-margin-mobile md:px-gutter py-4 max-w-container-max mx-auto z-40">
+<div class="flex items-center gap-2 text-primary dark:text-primary-fixed hover:bg-surface-container-low dark:hover:bg-tertiary-container transition-all cursor-pointer rounded-full p-2">
+<span class="material-symbols-outlined" data-icon="terminal">terminal</span>
+</div>
+<div class="font-display-xl-mobile text-headline-md tracking-tighter text-primary dark:text-primary-fixed font-extrabold uppercase hidden md:block">
+            G.GILLE-CHRIST
+        </div>
+<nav class="hidden md:flex gap-8 font-label-sm text-label-sm">
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors py-2" href="#">Home</a>
+<a class="text-primary dark:text-primary-fixed font-bold border-b-2 border-primary py-2" href="#">About</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors py-2" href="#">Projects</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors py-2" href="#">Education</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors py-2" href="#">Contact</a>
+</nav>
+<div class="md:hidden flex items-center gap-2 text-primary dark:text-primary-fixed hover:bg-surface-container-low dark:hover:bg-tertiary-container transition-all cursor-pointer rounded-full p-2">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</div>
+</header>
+<!-- Main Content -->
+<main class="max-w-container-max mx-auto px-margin-mobile md:px-gutter pt-section-gap pb-section-gap">
+<!-- Hero Section -->
+<section class="mb-section-gap grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+<div class="md:col-span-7 flex flex-col gap-6">
+<h1 class="font-display-xl text-display-xl text-primary font-extrabold tracking-tighter">About Me</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed max-w-2xl">
+                    Étudiant en L2 Sécurité Informatique, développeur full-stack (Next.js, Prisma, PostgreSQL, Python) avec une expérience concrète de conception d'applications de gestion : dashboards à accès par rôle, génération automatisée de rapports (PDF/Excel), intégration d'API et sécurisation des données. Certifié ANSSI SecNumacadémie. Autonome, rigoureux, à l'aise pour vulgariser des solutions techniques auprès d'utilisateurs non spécialistes. Motivé par une mission au service du secteur associatif et humanitaire.
+                </p>
+<div class="flex flex-wrap gap-4 mt-4">
+<a class="bg-deep-navy text-on-primary px-6 py-3 rounded hover:bg-muted-rose transition-colors duration-300 font-label-sm text-label-sm flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-[18px]">download</span>
+                        Download CV
+                    </a>
+<a class="border border-outline-variant text-charcoal px-6 py-3 rounded hover:bg-surface-container-low transition-colors duration-300 font-label-sm text-label-sm flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-[18px]">mail</span>
+                        Contact Me
+                    </a>
+</div>
+</div>
+<div class="md:col-span-5 flex justify-center md:justify-end relative h-64 md:h-96">
+<!-- Decorative Abstract Element instead of a generated photo -->
+<div class="absolute inset-0 bg-gradient-to-tr from-surface-container-high to-surface-container-lowest rounded-xl border border-outline-variant overflow-hidden flex items-center justify-center opacity-80 mix-blend-multiply">
+<span class="material-symbols-outlined text-9xl text-outline-variant opacity-20 transform -rotate-12">code</span>
+<span class="material-symbols-outlined text-9xl text-outline-variant opacity-20 absolute top-10 right-10 transform rotate-12">security</span>
+</div>
+</div>
+</section>
+<!-- Technical Skills Section -->
+<section class="mb-section-gap">
+<div class="mb-12 border-b border-outline-variant pb-4">
+<h2 class="font-headline-lg text-headline-lg text-primary uppercase tracking-wider">Compétences Techniques</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Skill Module 1 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-6 hover:shadow-[0px_10px_30px_rgba(0,0,0,0.05)] transition-shadow duration-300 flex flex-col gap-4">
+<div class="flex items-center gap-3 text-deep-navy mb-2">
+<span class="material-symbols-outlined text-2xl">developer_mode</span>
+<h3 class="font-headline-md text-[20px] leading-tight text-primary">Développement d'applications</h3>
+</div>
+<ul class="flex flex-col gap-3 font-body-md text-on-surface-variant">
+<li class="bullet-point">Next.js 15, React, Prisma ORM, PostgreSQL — conception de schémas de données et de dashboards à accès par rôle (Admin/Doctor/Patient)</li>
+<li class="bullet-point">Python (scripts, automatisation), Linux/Bash, Git &amp; GitHub</li>
+<li class="bullet-point">Authentification JWT, intégration d'API tierces (identité nationale ANIP NPI Bénin, vérification publique)</li>
+</ul>
+<div class="mt-auto pt-4 flex flex-wrap gap-2">
+<span class="bg-surface-container-low text-charcoal px-3 py-1 rounded font-label-sm text-[11px]">Next.js</span>
+<span class="bg-surface-container-low text-charcoal px-3 py-1 rounded font-label-sm text-[11px]">Prisma</span>
+<span class="bg-surface-container-low text-charcoal px-3 py-1 rounded font-label-sm text-[11px]">Python</span>
+</div>
+</div>
+<!-- Skill Module 2 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-6 hover:shadow-[0px_10px_30px_rgba(0,0,0,0.05)] transition-shadow duration-300 flex flex-col gap-4">
+<div class="flex items-center gap-3 text-deep-navy mb-2">
+<span class="material-symbols-outlined text-2xl">lock</span>
+<h3 class="font-headline-md text-[20px] leading-tight text-primary">Sécurité &amp; Fiabilité</h3>
+</div>
+<ul class="flex flex-col gap-3 font-body-md text-on-surface-variant">
+<li class="bullet-point">Cryptographie asymétrique (GnuPG), signature numérique, hashing SHA-256</li>
+<li class="bullet-point">Ancrage blockchain (Bitcoin OP_RETURN), vérification d'intégrité par QR code, journalisation d'audit immuable</li>
+<li class="bullet-point">Fondamentaux SSI certifiés ANSSI, gestion des risques SI (notions EBIOS RM, ISO 27005)</li>
+</ul>
+<div class="mt-auto pt-4 flex flex-wrap gap-2">
+<span class="bg-surface-container-low text-charcoal px-3 py-1 rounded font-label-sm text-[11px]">GnuPG</span>
+<span class="bg-surface-container-low text-charcoal px-3 py-1 rounded font-label-sm text-[11px]">Blockchain</span>
+<span class="bg-surface-container-low text-charcoal px-3 py-1 rounded font-label-sm text-[11px]">ANSSI</span>
+</div>
+</div>
+<!-- Skill Module 3 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-6 hover:shadow-[0px_10px_30px_rgba(0,0,0,0.05)] transition-shadow duration-300 flex flex-col gap-4">
+<div class="flex items-center gap-3 text-deep-navy mb-2">
+<span class="material-symbols-outlined text-2xl">router</span>
+<h3 class="font-headline-md text-[20px] leading-tight text-primary">Réseaux &amp; Protocoles</h3>
+</div>
+<ul class="flex flex-col gap-3 font-body-md text-on-surface-variant">
+<li class="bullet-point">TCP/IP, modèle OSI</li>
+<li class="bullet-point">VPN PPTP &amp; L2TP (GNS3)</li>
+<li class="bullet-point">DNS BIND9 (zones directe &amp; inverse)</li>
+<li class="bullet-point">Analyse de trafic réseau (Wireshark)</li>
+</ul>
+<div class="mt-auto pt-4 flex flex-wrap gap-2">
+<span class="bg-surface-container-low text-charcoal px-3 py-1 rounded font-label-sm text-[11px]">TCP/IP</span>
+<span class="bg-surface-container-low text-charcoal px-3 py-1 rounded font-label-sm text-[11px]">Wireshark</span>
+<span class="bg-surface-container-low text-charcoal px-3 py-1 rounded font-label-sm text-[11px]">VPN</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Academic & Certifications Section -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-12">
+<!-- Academic History -->
+<div class="md:col-span-7 flex flex-col gap-8">
+<div class="border-b border-outline-variant pb-4 mb-4">
+<h2 class="font-headline-lg text-headline-lg text-primary uppercase tracking-wider flex items-center gap-3">
+<span class="material-symbols-outlined text-3xl">school</span>
+                        Formation Académique
+                    </h2>
+</div>
+<div class="flex flex-col gap-6 relative pl-6 border-l border-outline-variant">
+<div class="relative">
+<div class="absolute -left-[30px] top-1 w-3 h-3 bg-muted-rose rounded-full"></div>
+<h3 class="font-headline-md text-[20px] text-primary">Licence en Sécurité Informatique (L2) — en cours</h3>
+<p class="font-label-sm text-label-sm text-secondary uppercase tracking-wider mt-1 mb-3">2025 – présent | IFRI – Université d'Abomey-Calavi (UAC), Bénin</p>
+<p class="font-body-md text-on-surface-variant">
+                            Cours principaux : sécurité des réseaux, cryptographie, systèmes d'exploitation, administration Linux, protocoles Internet.
+                        </p>
+</div>
+</div>
+</div>
+<!-- Certifications -->
+<div class="md:col-span-5 flex flex-col gap-8">
+<div class="border-b border-outline-variant pb-4 mb-4">
+<h2 class="font-headline-lg text-headline-lg text-primary uppercase tracking-wider flex items-center gap-3">
+<span class="material-symbols-outlined text-3xl">workspace_premium</span>
+                        Certifications
+                    </h2>
+</div>
+<div class="bg-surface-container-low p-6 rounded-lg border border-outline-variant flex items-start gap-4">
+<span class="material-symbols-outlined text-4xl text-primary">verified</span>
+<div>
+<h3 class="font-headline-md text-[18px] text-primary">Certificat ANSSI SecNumacadémie</h3>
+<p class="font-body-md text-on-surface-variant mt-2 text-sm">
+                             Validation des connaissances fondamentales en sécurité des systèmes d'information, gestion des risques et bonnes pratiques d'hygiène informatique.
+                         </p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface dark:bg-on-background font-body-md text-body-md full-width bottom-0 border-t border-outline-variant dark:border-outline flat no shadows flex flex-col md:flex-row justify-between items-center w-full px-margin-mobile md:px-gutter py-stack-lg max-w-container-max mx-auto gap-stack-md mt-section-gap">
+<div class="text-charcoal dark:text-surface-variant">
+            © 2024 GANSE Kpèhoué Gille-Christ. All rights reserved.
+        </div>
+<div class="flex gap-6">
+<a class="text-on-surface-variant hover:text-muted-rose transition-colors duration-300 flex items-center" href="#">
+<span class="material-symbols-outlined" data-icon="github">code</span> <!-- Fallback icon if github not available in material -->
+</a>
+<a class="text-on-surface-variant hover:text-muted-rose transition-colors duration-300 flex items-center" href="#">
+<span class="material-symbols-outlined" data-icon="terminal">terminal</span>
+</a>
+<a class="text-on-surface-variant hover:text-muted-rose transition-colors duration-300 flex items-center" href="#">
+<span class="material-symbols-outlined" data-icon="security">security</span>
+</a>
+<a class="text-on-surface-variant hover:text-muted-rose transition-colors duration-300 flex items-center" href="#">
+<span class="material-symbols-outlined" data-icon="mail">mail</span>
+</a>
+</div>
+</footer>
+</body></html>

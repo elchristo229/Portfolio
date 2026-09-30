@@ -1,0 +1,9 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Aperçu du document</title>
+<style>body{margin:0;background:#edf1f0;color:#1f2b2a;font-family:Arial,sans-serif}header{position:sticky;top:0;z-index:2;background:#10201f;color:white;padding:14px 5%;display:flex;align-items:center;justify-content:space-between;gap:16px}h1{font-size:16px;margin:0}a{color:white;text-decoration:none;border:1px solid #8ebdb6;padding:8px 12px;font-size:12px}main{width:min(850px,94%);margin:25px auto}main img{display:block;width:100%;height:auto;background:#fff;margin:0 auto 22px;box-shadow:0 3px 15px #0002}@media(max-width:600px){header{padding:12px}main{width:96%;margin:12px auto}h1{font-size:13px}a{padding:7px 8px}}</style>
+</head>
+<body><header><h1 id="title">Aperçu du document</h1><div><a id="download" download>Télécharger le PDF</a><a href="Untitled-1.html#documents">Retour</a></div></header><main id="pages"></main><script>
+const params=new URLSearchParams(location.search);const prefix=params.get('prefix');const title=params.get('title')||'Aperçu du document';const count=Number(params.get('pages')||1);document.title=title;document.getElementById('title').textContent=title;document.getElementById('download').href=params.get('pdf')||'#';for(let index=1;index<=count;index+=1){const image=document.createElement('img');image.src=`document-previews/${prefix}-${index}.png`;image.alt=`${title}, page ${index}`;image.onerror=()=>image.remove();document.getElementById('pages').appendChild(image)}
+</script></body></html>

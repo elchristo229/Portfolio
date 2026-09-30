@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contact - GANSE Kpèhoué Gille-Christ</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed-variant": "#2c4964",
+                        "surface-container-lowest": "#ffffff",
+                        "paper-white": "#FFFFFF",
+                        "on-primary-fixed": "#001d33",
+                        "on-surface-variant": "#43474d",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed-dim": "#c8c6c6",
+                        "surface-container-high": "#e7e8e9",
+                        "secondary": "#715952",
+                        "on-primary-container": "#9bb8d8",
+                        "on-background": "#191c1d",
+                        "on-secondary-fixed": "#291712",
+                        "background": "#f8f9fa",
+                        "charcoal": "#3D3D3D",
+                        "inverse-primary": "#acc9ea",
+                        "surface-container": "#edeeef",
+                        "on-tertiary-container": "#b7b5b5",
+                        "on-tertiary-fixed": "#1b1c1c",
+                        "surface-bright": "#f8f9fa",
+                        "primary-fixed-dim": "#acc9ea",
+                        "on-tertiary": "#ffffff",
+                        "primary": "#13324c",
+                        "outline-variant": "#c3c7ce",
+                        "deep-navy": "#2C4964",
+                        "surface-container-low": "#f3f4f5",
+                        "on-secondary-fixed-variant": "#58423b",
+                        "on-secondary-container": "#785f58",
+                        "secondary-container": "#fddbd2",
+                        "primary-fixed": "#cee5ff",
+                        "error": "#ba1a1a",
+                        "on-surface": "#191c1d",
+                        "outline": "#73777e",
+                        "secondary-fixed-dim": "#dfc0b7",
+                        "error-container": "#ffdad6",
+                        "tertiary": "#313131",
+                        "on-primary": "#ffffff",
+                        "surface-variant": "#e1e3e4",
+                        "primary-container": "#2c4964",
+                        "muted-rose": "#B1948C",
+                        "on-tertiary-fixed-variant": "#474747",
+                        "inverse-on-surface": "#f0f1f2",
+                        "inverse-surface": "#2e3132",
+                        "tertiary-fixed": "#e4e2e1",
+                        "surface": "#f8f9fa",
+                        "secondary-fixed": "#fddbd2",
+                        "on-error-container": "#93000a",
+                        "on-error": "#ffffff",
+                        "surface-container-highest": "#e1e3e4",
+                        "surface-dim": "#d9dadb",
+                        "surface-tint": "#44617d",
+                        "tertiary-container": "#474747"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "section-gap": "120px",
+                        "stack-md": "16px",
+                        "container-max": "1200px",
+                        "stack-sm": "8px",
+                        "margin-mobile": "16px",
+                        "stack-lg": "32px"
+                    },
+                    "fontFamily": {
+                        "display-xl-mobile": ["Manrope"],
+                        "headline-lg": ["Manrope"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "display-xl": ["Manrope"],
+                        "label-sm": ["JetBrains Mono"],
+                        "headline-md": ["Manrope"],
+                        "code-inline": ["JetBrains Mono"]
+                    },
+                    "fontSize": {
+                        "display-xl-mobile": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "display-xl": ["64px", { "lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "label-sm": ["13px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "code-inline": ["14px", { "lineHeight": "20px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: #ffffff; }
+        .nav-drawer { transform: translateX(-100%); transition: transform 0.3s ease-in-out; }
+        .nav-drawer.open { transform: translateX(0); }
+        .drawer-overlay { opacity: 0; pointer-events: none; transition: opacity 0.3s ease-in-out; }
+        .drawer-overlay.open { opacity: 1; pointer-events: auto; }
+        
+        .contact-input:focus-within {
+            border-color: #2C4964;
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md text-charcoal bg-surface-container-lowest antialiased flex flex-col min-h-screen">
+<!-- Drawer Overlay -->
+<div class="drawer-overlay fixed inset-0 bg-on-background/50 z-40 backdrop-blur-sm hidden md:hidden" id="drawerOverlay"></div>
+<!-- NavigationDrawer (Mobile) -->
+<nav class="nav-drawer fixed left-0 top-0 h-full w-80 z-50 bg-surface-container-lowest shadow-lg rounded-r-xl flex flex-col pt-8 pb-4 hidden md:hidden" id="navDrawer">
+<div class="px-6 mb-8 flex justify-between items-center">
+<h2 class="font-display-xl-mobile text-headline-md tracking-tighter text-primary">Navigation</h2>
+<button class="text-on-surface-variant hover:text-primary transition-colors p-2" id="closeDrawerBtn">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+</div>
+<ul class="flex-1 flex flex-col gap-2">
+<li>
+<a class="text-on-surface-variant hover:bg-surface-container-high rounded-full mx-2 px-4 py-3 flex items-center gap-4 font-headline-md text-headline-md transition-all hover:bg-surface-container-high" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-sm text-label-sm">Home</span>
+</a>
+</li>
+<li>
+<a class="text-on-surface-variant hover:bg-surface-container-high rounded-full mx-2 px-4 py-3 flex items-center gap-4 font-headline-md text-headline-md transition-all hover:bg-surface-container-high" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-sm text-label-sm">About</span>
+</a>
+</li>
+<li>
+<a class="text-on-surface-variant hover:bg-surface-container-high rounded-full mx-2 px-4 py-3 flex items-center gap-4 font-headline-md text-headline-md transition-all hover:bg-surface-container-high" href="#">
+<span class="material-symbols-outlined" data-icon="code">code</span>
+<span class="font-label-sm text-label-sm">Projects</span>
+</a>
+</li>
+<li>
+<a class="text-on-surface-variant hover:bg-surface-container-high rounded-full mx-2 px-4 py-3 flex items-center gap-4 font-headline-md text-headline-md transition-all hover:bg-surface-container-high" href="#">
+<span class="material-symbols-outlined" data-icon="school">school</span>
+<span class="font-label-sm text-label-sm">Education</span>
+</a>
+</li>
+<li>
+<a class="bg-primary-container text-on-primary-container rounded-full mx-2 px-4 py-3 flex items-center gap-4 font-headline-md text-headline-md opacity-70 scale-95 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="mail">mail</span>
+<span class="font-label-sm text-label-sm font-bold">Contact</span>
+</a>
+</li>
+</ul>
+</nav>
+<!-- TopAppBar -->
+<header class="bg-surface/80 backdrop-blur-md full-width top-0 sticky border-b border-outline-variant z-30">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-gutter py-4 max-w-container-max mx-auto">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary text-2xl hidden md:block" data-icon="terminal">terminal</span>
+<a class="font-display-xl-mobile md:font-display-xl text-headline-md tracking-tighter text-primary" href="#">G.GILLE-CHRIST</a>
+</div>
+<!-- Desktop Nav Links -->
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-sm text-label-sm hover:bg-surface-container-low transition-all px-3 py-2 rounded-lg" href="#">Home</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-sm text-label-sm hover:bg-surface-container-low transition-all px-3 py-2 rounded-lg" href="#">About</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-sm text-label-sm hover:bg-surface-container-low transition-all px-3 py-2 rounded-lg" href="#">Projects</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-sm text-label-sm hover:bg-surface-container-low transition-all px-3 py-2 rounded-lg" href="#">Education</a>
+<a class="text-primary font-bold border-b-2 border-primary font-label-sm text-label-sm px-3 py-2" href="#">Contact</a>
+</nav>
+<button class="md:hidden text-primary p-2 focus:outline-none hover:bg-surface-container-low transition-all rounded-full" id="menuBtn">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 w-full max-w-container-max mx-auto px-margin-mobile md:px-gutter py-section-gap flex flex-col md:flex-row gap-section-gap">
+<!-- Contact Info & Abstract Map -->
+<div class="w-full md:w-1/2 flex flex-col gap-stack-lg justify-center">
+<div>
+<h1 class="font-display-xl-mobile md:font-display-xl text-display-xl-mobile md:text-display-xl text-primary mb-stack-md">Get in Touch</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-md">
+                    Interested in collaboration, have a project in mind, or just want to say hello? I'm always open to discussing new opportunities in software engineering and security.
+                </p>
+</div>
+<div class="flex flex-col gap-stack-md mt-stack-lg">
+<div class="flex items-center gap-4 bg-surface-bright p-4 rounded-xl border border-outline-variant hover:shadow-[0px_10px_30px_rgba(0,0,0,0.05)] transition-shadow">
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="location_on">location_on</span>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase">Location</p>
+<p class="font-body-md text-body-md text-charcoal font-medium">Abomey-Calavi, Bénin</p>
+</div>
+</div>
+<div class="flex items-center gap-4 bg-surface-bright p-4 rounded-xl border border-outline-variant hover:shadow-[0px_10px_30px_rgba(0,0,0,0.05)] transition-shadow">
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="mail">mail</span>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase">Email</p>
+<a class="font-code-inline text-code-inline text-deep-navy hover:text-muted-rose transition-colors" href="mailto:kpehoue@gmail.com">kpehoue@gmail.com</a>
+</div>
+</div>
+<div class="flex items-center gap-4 bg-surface-bright p-4 rounded-xl border border-outline-variant hover:shadow-[0px_10px_30px_rgba(0,0,0,0.05)] transition-shadow">
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="terminal">terminal</span>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase">GitHub</p>
+<a class="font-code-inline text-code-inline text-deep-navy hover:text-muted-rose transition-colors" href="#">github.com/gkpehoue</a>
+</div>
+</div>
+</div>
+<!-- Abstract Map Decoration -->
+<div class="mt-auto pt-stack-lg hidden md:block opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+<img class="w-full h-48 object-cover rounded-xl border border-outline-variant" data-alt="A minimalist, monochromatic abstract map visualization of Abomey-Calavi, Benin. The style is strictly architectural and editorial, using very thin, precise light gray grid lines on a pristine white background. Small, subtle geometric nodes in a deep navy color indicate key intersections. The aesthetic feels highly technical, engineered, and modern, fitting perfectly within a clean, light-mode interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGGnawLaHB0kA5eiqP7DnL3Qmx8vbc2JM4pHEaq436VbVKG57ifoc02LbrAk7076LW6ZgNUGkAqcrZgNg_5P9av7n3kUZAIgN4lBYGuzMmsM-t5nf-qKjowNkyfpMY9GSH3UPXOtBeF52s9wCARvew8FOjZyXRs1q7QibWIHG2maWHf_SxL_zE4JyaoCfUr7tJZUULlNN_PkI_h7VqgekvQyVP7JvwYXO44UoGaS5ehJi2WEV8mErm-A"/>
+</div>
+</div>
+<!-- Contact Form Bento Grid Style -->
+<div class="w-full md:w-1/2 flex items-center">
+<form class="w-full bg-surface p-6 md:p-8 rounded-xl border border-outline-variant flex flex-col gap-stack-lg relative overflow-hidden group">
+<!-- Subtle background accent -->
+<div class="absolute -top-24 -right-24 w-48 h-48 bg-primary-fixed-dim rounded-full blur-3xl opacity-20 group-hover:opacity-40 transition-opacity duration-700 pointer-events-none"></div>
+<div class="space-y-6 relative z-10">
+<div class="contact-input flex flex-col gap-2">
+<label class="font-label-sm text-label-sm text-charcoal" for="name">Name</label>
+<input class="bg-paper-white border border-outline-variant rounded-lg p-3 font-body-md text-body-md text-charcoal focus:ring-0 focus:outline-none transition-colors" id="name" name="name" placeholder="John Doe" required="" type="text"/>
+</div>
+<div class="contact-input flex flex-col gap-2">
+<label class="font-label-sm text-label-sm text-charcoal" for="email">Email Address</label>
+<input class="bg-paper-white border border-outline-variant rounded-lg p-3 font-body-md text-body-md text-charcoal focus:ring-0 focus:outline-none transition-colors font-code-inline text-code-inline" id="email" name="email" placeholder="john@example.com" required="" type="email"/>
+</div>
+<div class="contact-input flex flex-col gap-2">
+<label class="font-label-sm text-label-sm text-charcoal" for="message">Message</label>
+<textarea class="bg-paper-white border border-outline-variant rounded-lg p-3 font-body-md text-body-md text-charcoal focus:ring-0 focus:outline-none transition-colors resize-none" id="message" name="message" placeholder="How can we collaborate?" required="" rows="5"></textarea>
+</div>
+</div>
+<button class="relative z-10 w-full bg-deep-navy text-on-primary font-label-sm text-label-sm py-4 rounded-lg hover:bg-muted-rose transition-colors duration-300 flex items-center justify-center gap-2 group" type="submit">
+<span>Send Message</span>
+<span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform" data-icon="send">send</span>
+</button>
+</form>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface full-width bottom-0 border-t border-outline-variant mt-auto">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-margin-mobile md:px-gutter py-stack-lg max-w-container-max mx-auto gap-stack-md">
+<p class="font-body-md text-body-md text-on-surface-variant font-label-sm text-label-sm text-center md:text-left">
+                © 2024 GANSE Kpèhoué Gille-Christ. All rights reserved.
+            </p>
+<div class="flex items-center gap-6">
+<a class="text-on-surface-variant hover:text-muted-rose transition-colors duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="github">save_as</span>
+</a>
+<a class="text-on-surface-variant hover:text-muted-rose transition-colors duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="terminal">terminal</span>
+</a>
+<a class="text-on-surface-variant hover:text-muted-rose transition-colors duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="security">security</span>
+</a>
+<a class="text-on-surface-variant hover:text-muted-rose transition-colors duration-300" href="mailto:kpehoue@gmail.com">
+<span class="material-symbols-outlined" data-icon="mail">mail</span>
+</a>
+</div>
+</div>
+</footer>
+<script>
+        // Mobile Drawer Logic
+        const menuBtn = document.getElementById('menuBtn');
+        const closeBtn = document.getElementById('closeDrawerBtn');
+        const navDrawer = document.getElementById('navDrawer');
+        const drawerOverlay = document.getElementById('drawerOverlay');
+
+        function toggleDrawer() {
+            navDrawer.classList.toggle('open');
+            drawerOverlay.classList.toggle('hidden');
+            // Small delay to allow display block to apply before opacity transition
+            setTimeout(() => {
+                drawerOverlay.classList.toggle('open');
+            }, 10);
+            
+            if (navDrawer.classList.contains('open')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = '';
+            }
+        }
+
+        menuBtn.addEventListener('click', toggleDrawer);
+        closeBtn.addEventListener('click', toggleDrawer);
+        drawerOverlay.addEventListener('click', toggleDrawer);
+        
+        // Input focus effects
+        const inputs = document.querySelectorAll('input, textarea');
+        inputs.forEach(input => {
+            input.addEventListener('focus', () => {
+                input.parentElement.classList.add('focused');
+            });
+            input.addEventListener('blur', () => {
+                input.parentElement.classList.remove('focused');
+            });
+        });
+    </script>
+</body></html>
