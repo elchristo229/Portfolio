@@ -10,6 +10,7 @@ export const portfolioData = {
     email: "kpehoue@gmail.com",
     github: "https://github.com/elchristo229",
     githubUsername: "elchristo229",
+    linkedin: "https://www.linkedin.com/in/gille-christ-ganse-803b39317/",
     availability: "Ouvert aux opportunités de stage, de projet et d'emploi",
     educationLevel: "Licence 3 Sécurité Informatique — IFRI / UAC",
     photos: {

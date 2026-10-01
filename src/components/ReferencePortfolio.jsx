@@ -343,6 +343,7 @@ function ContactSection() {
   const contacts = [
     { label: 'EMAIL', value: personal.email, href: `mailto:${personal.email}` },
     { label: 'GITHUB', value: `github.com/${personal.githubUsername}`, href: personal.github },
+    { label: 'LINKEDIN', value: 'linkedin.com/in/gille-christ-ganse-803b39317', href: personal.linkedin },
     { label: 'TÉLÉPHONE · BÉNIN', value: personal.phone, href: `tel:${personal.phoneRaw}` },
   ];
 
