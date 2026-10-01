@@ -373,13 +373,22 @@ export default function ReferencePortfolio() {
   const [theme, setTheme] = useState(() => window.localStorage.getItem('portfolio-theme') || 'signal');
   const [activeDocument, setActiveDocument] = useState(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeHeroPhoto, setActiveHeroPhoto] = useState(0);
   const { personal } = portfolioData;
+  const heroPhotos = [personal.photos.primary, personal.photos.academic, personal.photos.lifestyle];
   const cvUrl = './CV_GANSE_Kpehoue_Gille-Christ.pdf';
   const themeRoot = useRef(null);
 
   useEffect(() => {
     window.localStorage.setItem('portfolio-theme', theme);
   }, [theme]);
+
+  useEffect(() => {
+    const timer = window.setInterval(() => {
+      setActiveHeroPhoto((photoIndex) => (photoIndex + 1) % heroPhotos.length);
+    }, 5000);
+    return () => window.clearInterval(timer);
+  }, [heroPhotos.length]);
 
   useEffect(() => {
     const revealNodes = document.querySelectorAll('.reveal');
@@ -442,9 +451,20 @@ export default function ReferencePortfolio() {
               </div>
               <div className="hero-section-marker"><strong>01</strong><span /> INTRODUCTION</div>
             </div>
-            <figure className="hero-image reveal">
-              <img src={personal.photos.primary} alt={`Portrait de ${personal.fullName}`} fetchPriority="high" />
+            <figure className="hero-image reveal" aria-roledescription="diaporama" aria-label="Portraits de Gille-Christ GANSE">
+              <img src={heroPhotos[activeHeroPhoto]} alt={`Portrait de ${personal.fullName}`} fetchpriority={activeHeroPhoto === 0 ? 'high' : 'auto'} />
               <figcaption><span>IFRI / UAC</span><span>ABOMEY-CALAVI, BÉNIN</span></figcaption>
+              <div className="hero-photo-controls" role="group" aria-label="Choisir un portrait">
+                {heroPhotos.map((photo, index) => (
+                  <button
+                    key={photo}
+                    type="button"
+                    aria-label={`Afficher le portrait ${index + 1}`}
+                    aria-pressed={activeHeroPhoto === index}
+                    onClick={() => setActiveHeroPhoto(index)}
+                  />
+                ))}
+              </div>
             </figure>
           </div>
         </section>
