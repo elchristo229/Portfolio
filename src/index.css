@@ -269,9 +269,8 @@ button:focus-visible, a:focus-visible, input:focus-visible { outline: 2px solid 
 .cert-row small { text-align: right; white-space: nowrap; }
 
 .contact-section { padding-bottom: 94px; }
-.contact-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-.contact-item { min-height: 125px; display: grid; grid-template-columns: 1fr auto; align-content: center; gap: 8px; padding: 22px; color: var(--ink); text-decoration: none; border-right: 1px solid var(--line); transition: background-color 200ms ease; }
-.contact-item:first-child { border-left: 1px solid var(--line); }
+.contact-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+.contact-item { min-height: 125px; display: grid; grid-template-columns: 1fr auto; align-content: center; gap: 8px; padding: 22px; color: var(--ink); text-decoration: none; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); transition: background-color 200ms ease; }
 .contact-item:hover { background: var(--accent-soft); }
 .contact-item > span { grid-column: 1 / -1; color: var(--muted); font: 10px 'DM Mono', monospace; letter-spacing: 0.1em; }
 .contact-item strong { min-width: 0; overflow-wrap: anywhere; font-size: 14px; }
