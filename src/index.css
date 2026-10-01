@@ -269,12 +269,10 @@ button:focus-visible, a:focus-visible, input:focus-visible { outline: 2px solid 
 .cert-row small { text-align: right; white-space: nowrap; }
 
 .contact-section { padding-bottom: 94px; }
-.contact-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
-.contact-item { min-height: 125px; display: grid; grid-template-columns: 1fr auto; align-content: center; gap: 8px; padding: 22px; color: var(--ink); text-decoration: none; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); transition: background-color 200ms ease; }
-.contact-item:hover { background: var(--accent-soft); }
-.contact-item > span { grid-column: 1 / -1; color: var(--muted); font: 10px 'DM Mono', monospace; letter-spacing: 0.1em; }
-.contact-item strong { min-width: 0; overflow-wrap: anywhere; font-size: 14px; }
-.contact-item small { color: var(--accent); font-size: 16px; }
+.contact-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+.contact-item { width: 60px; height: 60px; display: grid; place-items: center; color: var(--ink); background: color-mix(in srgb, var(--surface) 76%, transparent); border: 1px solid var(--line); text-decoration: none; transition: color 180ms ease, background-color 180ms ease, border-color 180ms ease, transform 180ms ease; }
+.contact-item:hover { color: var(--accent); background: var(--accent-soft); border-color: var(--accent); transform: translateY(-2px); }
+.contact-item:focus-visible { outline-offset: 4px; }
 
 .site-footer { padding: 24px 0; color: var(--muted); border-top: 1px solid var(--line); font: 11px/1.7 'DM Mono', monospace; }
 .footer-layout { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
@@ -360,8 +358,8 @@ button:focus-visible, a:focus-visible, input:focus-visible { outline: 2px solid 
   .featured-project h3 { font-size: 20px; }
   .cert-row { align-items: flex-start; flex-direction: column; gap: 5px; }
   .cert-row small { text-align: left; }
-  .contact-grid { grid-template-columns: 1fr; }
-  .contact-item, .contact-item:first-child { min-height: 90px; border: 0; border-bottom: 1px solid var(--line); }
+  .contact-grid { gap: 10px; }
+  .contact-item { width: 54px; height: 54px; }
   .footer-layout { align-items: flex-start; flex-direction: column; gap: 7px; }
 }
 

@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { Github, Linkedin, Mail, Phone } from 'lucide-react';
 import DocumentModal from './DocumentModal';
 import NetworkField from './NetworkField';
 import { portfolioData } from '../data/portfolioData';
@@ -341,10 +342,10 @@ function JourneySection() {
 function ContactSection() {
   const { personal } = portfolioData;
   const contacts = [
-    { label: 'EMAIL', value: personal.email, href: `mailto:${personal.email}` },
-    { label: 'GITHUB', value: `github.com/${personal.githubUsername}`, href: personal.github },
-    { label: 'LINKEDIN', value: 'linkedin.com/in/gille-christ-ganse-803b39317', href: personal.linkedin },
-    { label: 'TÉLÉPHONE · BÉNIN', value: personal.phone, href: `tel:${personal.phoneRaw}` },
+    { label: 'E-mail', href: `mailto:${personal.email}`, icon: Mail },
+    { label: 'GitHub', href: personal.github, icon: Github },
+    { label: 'LinkedIn', href: personal.linkedin, icon: Linkedin },
+    { label: 'Téléphone', href: `tel:${personal.phoneRaw}`, icon: Phone },
   ];
 
   return (
@@ -357,11 +358,17 @@ function ContactSection() {
           detail="Disponible pour un stage, un projet ou un emploi en sécurité informatique et développement."
         />
         <div className="contact-grid reveal">
-          {contacts.map((contact) => (
-            <a className="contact-item" key={contact.label} href={contact.href} target={contact.href.startsWith('http') ? '_blank' : undefined} rel={contact.href.startsWith('http') ? 'noreferrer' : undefined}>
-              <span>{contact.label}</span>
-              <strong>{contact.value}</strong>
-              <small aria-hidden="true">↗</small>
+          {contacts.map(({ label, href, icon: Icon }) => (
+            <a
+              className="contact-item"
+              key={label}
+              href={href}
+              aria-label={`${label}${href.startsWith('mailto:') ? ` : ${personal.email}` : href.startsWith('tel:') ? ` : ${personal.phone}` : ''}`}
+              title={label}
+              target={href.startsWith('http') ? '_blank' : undefined}
+              rel={href.startsWith('http') ? 'noreferrer' : undefined}
+            >
+              <Icon aria-hidden="true" size={22} strokeWidth={1.8} />
             </a>
           ))}
         </div>
