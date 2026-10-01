@@ -18,7 +18,12 @@ const navigation = [
   { label: 'Parcours', href: '#parcours' },
 ];
 
-const demoCommands = ['help', 'whoami', 'projects', 'contact'];
+const terminalCommands = [
+  'help', 'whoami', 'about', 'skills', 'stack', 'projects', 'certifs',
+  'experience', 'education', 'contact', 'email', 'phone', 'whatsapp',
+  'linkedin', 'github', 'cv', 'clear',
+];
+const demoCommands = ['help', 'whoami', 'skills', 'projects', 'certifs', 'experience', 'contact', 'clear'];
 
 function SectionHeading({ index, eyebrow, title, detail, id }) {
   return (
@@ -41,7 +46,7 @@ function TerminalDemo() {
   const [history, setHistory] = useState([]);
   const [historyIndex, setHistoryIndex] = useState(0);
   const outputRef = useRef(null);
-  const { personal, projects, skills } = portfolioData;
+  const { personal, projects, skills, certifications, timeline } = portfolioData;
 
   useEffect(() => {
     outputRef.current?.scrollTo({ top: outputRef.current.scrollHeight, behavior: 'smooth' });
@@ -60,14 +65,28 @@ function TerminalDemo() {
       return;
     }
 
+    const experience = timeline.filter((item) => item.type === 'experience');
+    const education = timeline.filter((item) => item.type === 'education');
+    const allSkills = Object.values(skills).flat();
     const results = {
-      help: 'Commandes disponibles : help · whoami · skills · projects · contact · clear',
-      whoami: `${personal.fullName}\nÉtudiant inscrit en troisième année de Licence de Sécurité Informatique · IFRI / UAC · Bénin`,
-      skills: skills.cybersecurity.slice(0, 4).map((skill) => `- ${skill.name}`).join('\n'),
-      projects: projects.slice(0, 4).map((project) => `- ${project.title}`).join('\n'),
-      contact: `${personal.email}\n${personal.phone}\n${personal.location}`,
-      sudo: 'Accès refusé. Cette console est une simulation de présentation.',
-      'sudo su': 'Accès refusé. Cette console est une simulation de présentation.',
+      help: `Commandes disponibles :\n${terminalCommands.join(' · ')}`,
+      whoami: `${personal.fullName}\nÉtudiant en ${personal.educationLevel} · ${personal.location}`,
+      about: `${personal.bioSummary}\n\n${personal.availability}`,
+      skills: allSkills.map((skill) => `- ${skill.name} (${skill.level}%)`).join('\n'),
+      stack: skills.fullstack.map((skill) => `- ${skill.name}`).join('\n'),
+      projects: projects.map((project) => `- ${project.title} · ${project.categoryLabel}`).join('\n'),
+      certifs: certifications.map((certification) => `- ${certification.title} · ${certification.issuer} · ${certification.grade}`).join('\n'),
+      experience: experience.map((item) => `- ${item.period} : ${item.title} · ${item.organization}`).join('\n'),
+      education: education.map((item) => `- ${item.period} : ${item.title} · ${item.organization}`).join('\n'),
+      contact: `E-mail : ${personal.email}\nTéléphone : ${personal.phoneCall}\nWhatsApp : ${personal.whatsapp}\nLinkedIn : ${personal.linkedin}\nGitHub : ${personal.github}`,
+      email: personal.email,
+      phone: `${personal.phoneCall} · tel:${personal.phoneCallRaw}`,
+      whatsapp: `${personal.phone} · ${personal.whatsapp}`,
+      linkedin: personal.linkedin,
+      github: personal.github,
+      cv: 'CV Sécurité Informatique : ./CV_GANSE_Kpehoue_Gille-Christ.pdf',
+      sudo: 'Accès refusé. Cette console de présentation ne donne pas accès au système.',
+      'sudo su': 'Accès refusé. Cette console de présentation ne donne pas accès au système.',
     };
     next.push({
       kind: results[command] ? 'result' : 'error',
@@ -95,7 +114,7 @@ function TerminalDemo() {
       setInput(history[nextIndex] || '');
     } else if (event.key === 'Tab') {
       event.preventDefault();
-      const matches = ['help', 'whoami', 'skills', 'projects', 'contact', 'clear'].filter((command) => command.startsWith(input.toLowerCase()));
+      const matches = terminalCommands.filter((command) => command.startsWith(input.trim().toLowerCase()));
       if (matches.length === 1) setInput(matches[0]);
     }
   };
