@@ -272,7 +272,11 @@ button:focus-visible, a:focus-visible, input:focus-visible { outline: 2px solid 
 .contact-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
 .contact-item { width: 60px; height: 60px; display: grid; place-items: center; color: var(--ink); background: color-mix(in srgb, var(--surface) 76%, transparent); border: 1px solid var(--line); text-decoration: none; transition: color 180ms ease, background-color 180ms ease, border-color 180ms ease, transform 180ms ease; }
 .contact-item:hover { color: var(--accent); background: var(--accent-soft); border-color: var(--accent); transform: translateY(-2px); }
+.contact-item-whatsapp:hover { color: #25d366; background: color-mix(in srgb, #25d366 12%, transparent); border-color: #25d366; }
 .contact-item:focus-visible { outline-offset: 4px; }
+.whatsapp-icon { width: 24px; height: 24px; position: relative; display: block; }
+.whatsapp-icon svg:first-child { position: absolute; inset: 0; }
+.whatsapp-icon svg:last-child { position: absolute; top: 7px; left: 7px; }
 
 .site-footer { padding: 24px 0; color: var(--muted); border-top: 1px solid var(--line); font: 11px/1.7 'DM Mono', monospace; }
 .footer-layout { display: flex; align-items: center; justify-content: space-between; gap: 20px; }

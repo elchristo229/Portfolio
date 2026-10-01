@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Github, Linkedin, Mail, Phone } from 'lucide-react';
+import { Github, Linkedin, Mail, MessageCircle, Phone } from 'lucide-react';
 import DocumentModal from './DocumentModal';
 import NetworkField from './NetworkField';
 import { portfolioData } from '../data/portfolioData';
@@ -342,10 +342,11 @@ function JourneySection() {
 function ContactSection() {
   const { personal } = portfolioData;
   const contacts = [
-    { label: 'E-mail', href: `mailto:${personal.email}`, icon: Mail },
-    { label: 'GitHub', href: personal.github, icon: Github },
-    { label: 'LinkedIn', href: personal.linkedin, icon: Linkedin },
-    { label: 'Téléphone', href: `tel:${personal.phoneRaw}`, icon: Phone },
+    { label: 'E-mail', href: `mailto:${personal.email}`, ariaLabel: `E-mail : ${personal.email}`, icon: Mail },
+    { label: 'GitHub', href: personal.github, ariaLabel: 'GitHub', icon: Github },
+    { label: 'LinkedIn', href: personal.linkedin, ariaLabel: 'LinkedIn', icon: Linkedin },
+    { label: 'WhatsApp', href: personal.whatsapp, ariaLabel: `WhatsApp : ${personal.phone}`, icon: MessageCircle, whatsapp: true },
+    { label: 'Téléphone', href: `tel:${personal.phoneCallRaw}`, ariaLabel: `Téléphone : ${personal.phoneCall}`, icon: Phone },
   ];
 
   return (
@@ -358,17 +359,24 @@ function ContactSection() {
           detail="Disponible pour un stage, un projet ou un emploi en sécurité informatique et développement."
         />
         <div className="contact-grid reveal">
-          {contacts.map(({ label, href, icon: Icon }) => (
+          {contacts.map(({ label, href, ariaLabel, icon: Icon, whatsapp }) => (
             <a
-              className="contact-item"
+              className={whatsapp ? 'contact-item contact-item-whatsapp' : 'contact-item'}
               key={label}
               href={href}
-              aria-label={`${label}${href.startsWith('mailto:') ? ` : ${personal.email}` : href.startsWith('tel:') ? ` : ${personal.phone}` : ''}`}
+              aria-label={ariaLabel}
               title={label}
               target={href.startsWith('http') ? '_blank' : undefined}
               rel={href.startsWith('http') ? 'noreferrer' : undefined}
             >
-              <Icon aria-hidden="true" size={22} strokeWidth={1.8} />
+              {whatsapp ? (
+                <span className="whatsapp-icon" aria-hidden="true">
+                  <MessageCircle size={23} strokeWidth={1.8} />
+                  <Phone size={10} strokeWidth={2.3} />
+                </span>
+              ) : (
+                <Icon aria-hidden="true" size={22} strokeWidth={1.8} />
+              )}
             </a>
           ))}
         </div>
